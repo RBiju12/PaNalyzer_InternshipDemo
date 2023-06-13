@@ -18,6 +18,10 @@ def overview():
 def service():
     return render_template("service.html")
 
+@app.route('/<user>')
+def welcome(user):
+    return f'Hello {user}!, Welcome to the PaNalyzer'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
