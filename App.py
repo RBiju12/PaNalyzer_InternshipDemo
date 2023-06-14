@@ -1,11 +1,14 @@
 from flask import Flask, render_template
 
-
-
 app = Flask(__name__, template_folder='Templates')
 
 @app.route("/")
 def index():
+    return render_template("base.html")
+
+
+@app.route("/home")
+def home():
     return render_template("home.html")
 
 
@@ -17,6 +20,7 @@ def overview():
 @app.route('/service')
 def service():
     return render_template("service.html")
+
 
 @app.route('/<user>')
 def welcome(user):
