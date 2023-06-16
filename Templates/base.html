@@ -35,7 +35,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light" >
     <div class="container-fluid">
-      <a class="navbar-brand" href="#home"><img class='bgimage' src="{{url_for('static', filename='images/bground.png')}}"
+      <a class="navbar-brand" href="{{ url_for('home') }}"><img class='bgimage' src="{{url_for('static', filename='images/bground.png')}}"
           alt="Logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,18 +44,24 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#home">PaNalyzer</a>
+            <a class="nav-link" href="{{ url_for('home') }}">PaNalyzer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#overview">Overview</a>
+            <a class="nav-link" href="{{ url_for('overview') }}">Overview</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#service">Service</a>
+            <a class="nav-link" href="{{ url_for('service') }}">Service</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+
+
+{% block content%}
+{% endblock %}
+  
 
   <footer class="bg-light text-center">
     <div class="container p-4 pb-0">
