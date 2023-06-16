@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+    {% block content%}
+    <h1>Overview</h1>
+    <div class="scrapeddata">
+        <div class="data1">
+          {% if overview %}
+            {% for textsss in overview %}
+            <li>{{ textsss }}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            <p>No data available</p>
+          {% endif %}
+        </div>
+        <div class="data2">
+        {% if feauture_lis %}
+            {% for texts in feauture_lis %}
+            <li>{{ texts }}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p>No data available</p>
+          {% endif %}
+      </div>
+    </div>
+
+{% endblock%}

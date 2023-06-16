@@ -7,6 +7,9 @@ app = Flask(__name__, template_folder='Templates')
 
 @app.route("/")
 def index():
+    return render_template("base.html")
+@app.route("/home")
+def home():
     try:
         url = "https://spanalytics.com/product/panalyzr/"
 
@@ -54,7 +57,7 @@ def overview():
             return "Empty List"
         
         else:
-            return overview, feauture_lis, render_template('overview.html', overview=overview, feauture_lis=feauture_lis)
+            return render_template('overview.html', overview=overview, feauture_lis=feauture_lis)
 
     except requests.exceptions.RequestException as e:
         print("Exception:", str(e))  
