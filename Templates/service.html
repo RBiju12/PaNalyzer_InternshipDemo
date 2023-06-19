@@ -1,6 +1,41 @@
 {% extends "base.html"%}
     {% block content%}
 
-    <h1>Service</h1>
+    <head>
+        <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    </head>
+    <style>
+        .titles{
+            text-align: center;
+            font-size: 25px;
+        }
+        .icon{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .important{
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+
+    
+    <div class="container">
+    <h1 class="titles">Service</h1>
+    <img class='icon' src="{{url_for('static', filename='images/paNalyzer_icon.png')}}" height="100px" width="100px">
+    </div>
+
+
+    <br>
+    <br>
+
+    <div class="section2">
+        <h1 class="important"><strong>Drag and Drop your PaNalyzer Software to verify the updated version</strong></h1>
+    </div>
+
+    <div class="functionality">
+        <button class="handler" onClick = "getFileType()">Select a file</button>
+    </div>
 
     {% endblock%}

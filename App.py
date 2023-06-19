@@ -67,8 +67,7 @@ def overview():
 
 @app.route('/service')
 def service():
-    return render_template("service.html")
-
+    return render_template('service.html')
 
 @app.route('/<user>')
 def welcome(user):
