@@ -1,12 +1,21 @@
 async function getFileType(){
     try{
-        const [fileHandle] = await window.showOpenFilePicker();
+        const [fileGrab] = await window.showOpenFilePicker();
 
-        const[filedata] = await fileHandle.getFile();
+        const filecontent = await fileGrab.getFile();
 
-        console.log(filedata)
-    }catch(error){
-        console.log(`Your error is ${error}`)
+        const filetype = filecontent.name.split(".").pop();
+
+        //filetype access .name from the console
+
+        if(filetype !== "exe" || filetype === null){
+            alert("Filetype must be .exe");
+        }
     }
+    catch(error){
+        console.log(`Your error is: ${error}`)
+    }
+
+
 
 }
