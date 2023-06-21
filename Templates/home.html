@@ -1,9 +1,41 @@
 {% extends "base.html"%}
     {% block content%}
 
+
+    <style>
+      .hometext{
+        font-size: 20px;
+        color: #5EBEC4;
+        text-align: center;
+      }
+      .heading{
+        font-size: 20px;
+        color: #5EBEC4;
+        text-align: center;
+      }
+
+      .datas{
+        border-style: solid;
+      }
+
+      .imagep{
+        display: grid;
+        place-items: center;
+      }
+    </style>
+
+  <h1 class="hometext">Welcome to our Newest-Reliable Solution</h1>
+    
+  <h1 class="heading">The PaNalyzer</h2>
+  <br>
+  <div class="imagep">
+<img src="{{url_for('static', filename='images/PaNalyzer-Image.png')}}" height="200" width="200">
+</div>
+<br>
+
+
 <div class="scrapeddata">
   <div class="datas">
-    <h2>Scraped Data:</h2>
     {% if texts %}
     <ul>
       {% for info in texts %}
@@ -16,6 +48,5 @@
   </div>
 </div>
 
-<img src="{{url_for('static', filename='images/PaNalyzer-Image.png')}}" height="100" width="120">
 
   {% endblock %}

@@ -1,21 +1,43 @@
 {% extends "base.html"%}
     {% block content%}
+
+    <style>
+      h1{
+        text-align: center;
+        font-size: 26px;
+      }
+
+      .data1{
+        border-style: solid;
+      }
+
+      .Heading{
+        text-align: center;
+      }
+
+      .text{
+        text-align: center;
+      }
+
+
+
+    </style>
     <h1>Overview</h1>
     <div class="scrapeddata">
         <div class="data1">
           {% if overview %}
             {% for textsss in overview %}
-            <li>{{ textsss }}</li>
+            <p>{{ textsss }}</p>
             {% endfor %}
-          </ul>
           {% else %}
             <p>No data available</p>
           {% endif %}
         </div>
         <div class="data2">
+        <h1 class="Heading">Features:</h1>
         {% if feauture_lis %}
             {% for texts in feauture_lis %}
-            <li>{{ texts }}</li>
+            <li class="text">{{ texts }}</li>
             {% endfor %}
           </ul>
           {% else %}

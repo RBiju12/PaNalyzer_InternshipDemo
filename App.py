@@ -10,6 +10,8 @@ def index():
     return render_template("base.html")
 @app.route("/home")
 def home():
+
+    #WebScraped website to grab text info
     try:
         url = "https://spanalytics.com/product/panalyzr/"
 
@@ -69,9 +71,15 @@ def overview():
 def service():
     return render_template('service.html')
 
-@app.route('/<user>')
+
+@app.route('/home/<user>')
 def welcome(user):
     return f'Hello {user}!, Welcome to the PaNalyzer'
+
+
+@app.errorhandler(404)
+def no_page(e):
+    return render_template("404.html"), 404
 
 
 
