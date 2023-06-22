@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash
 from bs4 import BeautifulSoup
 import requests
 
@@ -33,7 +33,7 @@ def home():
 
     except requests.exceptions.RequestException as e:
         print("Exception:", str(e))  
-        return "Website does not permit scraping or is JavaScript driven"
+        flash("Website does not permit scraping or is JavaScript driven")
 
 @app.route("/overview")
 def overview():
@@ -63,7 +63,7 @@ def overview():
 
     except requests.exceptions.RequestException as e:
         print("Exception:", str(e))  
-        return "Website does not permit scraping or is JavaScript driven"
+        flash("Website does not permit scraping or is JavaScript driven")
     
 
 
